@@ -1,24 +1,38 @@
+:root {
+  --color-light-general: #17e8f0;
+  --color-contrast-general: #f01717;
+  --color-font-general: #000000;
+  --color-background-general: #ffffff;
+  --color-font-placeholder: #969696;
+}
+
 html {
   font-size: 10px; /* px means "pixels": the base font size is now 10 pixels high  */
-  font-family: "Macondo", macondo; /* this should be the rest of the output you got from Google fonts */
-  background-color: #000000;
+  font-family: Calibri, sans-serif; /* this should be the rest of the output you got from Google fonts */
+  background-color: var(--color-background-general);
 }
 
 
 h1 {
   margin: 0;
-  padding: 20px 0;
-  color: #053800;
-  text-shadow: 3px 3px 1px rgb(6, 182, 44);
+  color: var(--color-contrast-general);
+  text-shadow: 3px 3px 1px var(--color-light-general);
   font-size: 60px;
-  text-align: center;
+}
+
+.title {
+  width: 100%;
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center
 }
 
 img {
-  display: block;
-  margin: 0 auto;
+  margin-left: 10px;
+  width: 7%;
+  display: inline;
 }
-
 
 p, li {
   font-size: 16px;
@@ -27,27 +41,27 @@ p, li {
 }
 
 h2,h3,h4,p,li {
-  color: rgb(6, 182, 44);
+  color: var(--color-font-general);
 }
 
 h2,h3,h4{
   padding: 5px;
-  border: thick double rgb(6, 182, 44);
+  border: thick double var(--color-light-general);
 }
 
 body {
-  width: 90%;
-  margin: 0 auto;
-  background-color: #000000;
-  padding: 0 20px 20px 20px;
-  border: 5px solid rgb(6, 182, 44);
+  width: 96%;
+  margin: 10px auto;
+  background-color: var(--color-background-general);
+  padding: 0 10px 10px 10px;
+  border: 5px solid var(--color-light-general);
 }
 
 form {
-  background-color: #000000;
+  background-color: var(--color-background-general);
   width: 400px;
   height: 44px;
-  border: 2px solid rgb(6, 182, 44);
+  border: 2px solid var(--color-light-general);
   border-radius: 5px;
   display: flex;
   flex-direction: row;
@@ -58,14 +72,14 @@ form {
 input {
   all: unset;
   font: 16px system-ui;
-  color: #fff;
+  color: var(--color-font-general);
   height: 100%;
   width: 100%;
   padding: 6px 10px;
 }
 
 ::placeholder {
-  color: #fff;
+  color: var(--color-font-placeholder);
   opacity: 0.7; 
 }
 
@@ -77,7 +91,7 @@ button {
 }
 
 svg {
-  color: rgb(6, 182, 44);
+  color: var(--color-contrast-general);
   fill: currentColor;
   width: 24px;
   height: 24px;

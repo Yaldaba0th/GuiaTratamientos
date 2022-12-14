@@ -1,19 +1,21 @@
 function tableCreate(gamet) {
+  let color= getComputedStyle(document.documentElement).getPropertyValue('--color-font-general');
+
   let rownames=["Patología","Medicamentos","Observaciones","Acciones"]
   let rowfields=["Patología","Medicamentos","Observaciones","Acciones"]
   let rows=gamet.length;
   const body = document.body,
         tbl = document.createElement('table');
   tbl.style.width = '100%';
-  tbl.style.border = '1px solid rgb(6, 182, 44)';
+  tbl.style.border = '1px solid'+color;
   
   //headers
   const tr = tbl.insertRow();
   for (let j = 0; j < 3; j++){
     const td = tr.insertCell(j);
     td.appendChild(document.createTextNode([rownames[j]]));
-    td.style.border = '1px solid rgb(6, 182, 44)';
-    td.style.color='rgb(6, 182, 44)';
+    td.style.border = '1px solid'+color;
+    td.style.color=color;
     td.style.fontSize='15px';
     td.style.fontWeight='bold';
     if (j===0){
@@ -31,13 +33,13 @@ function tableCreate(gamet) {
     for (let j = 0; j < 3; j++){
       const td = tr.insertCell(j);
       td.appendChild(document.createTextNode(gamet[i][rowfields[j]]));
-      td.style.border = '1px solid rgb(6, 182, 44)';
-      td.style.color='rgb(6, 182, 44)';
+      td.style.border = '1px solid'+color;
+      td.style.color=color;
       td.style.fontSize='15px';
     }
   }
   body.appendChild(tbl);
-  body.appendChild(document.createElement('p'));
+  //body.appendChild(document.createElement('p'));
 
 }
 
@@ -66,6 +68,7 @@ const f = document.getElementById('form');
 const q = document.getElementById('query');
 
 function submitted(event) {
+
   //console.log("hola");
   //console.log(enflist);
   event.preventDefault();
